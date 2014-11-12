@@ -3,6 +3,6 @@ Shiny.
 
 Example:
 ```r
-library("x3dom")
+library("shiny")
 runApp(system.file("examples/shiny",package="x3dom"))
 ```
