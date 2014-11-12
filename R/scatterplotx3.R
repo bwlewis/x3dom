@@ -13,6 +13,9 @@
 #' a vector of valid color names of length \code{nrow(x)}.
 #' @param grid Set FALSE to disable display of a grid.
 #'
+#' @source
+#' Harry Voorhees: \url{http://bl.ocks.org/hlvoorhees/5986172}.
+#' 
 #' @examples
 #' ## dontrun
 #' # A stand-alone example
@@ -23,9 +26,7 @@
 #' # A shiny example
 #' runApp(system.file("examples/shiny",package="x3dom"))
 #' 
-#' @source
-#' Harry Voorhees: \url{http://bl.ocks.org/hlvoorhees/5986172}.
-#' 
+#' @seealso scatterplot3d, rgl
 #' @importFrom rjson toJSON
 #' @export
 

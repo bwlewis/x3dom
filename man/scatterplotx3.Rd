@@ -41,4 +41,7 @@ scatterplotx3(x)
 # A shiny example
 runApp(system.file("examples/shiny",package="x3dom"))
 }
+\seealso{
+scatterplot3d, rgl
+}
 
