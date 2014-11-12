@@ -1,0 +1,13 @@
+dependencies:
+  - name: d3
+    version: 3.4.11
+    src: "htmlwidgets/lib/"
+    script: d3.v3.min.js
+  - name: x3domcss
+    version: 1.4
+    src: "htmlwidgets/lib/"
+    stylesheet: "x3dom.css"
+  - name: x3domjs
+    version: 1.4
+    src: "htmlwidgets/lib/"
+    script: x3dom.js
