@@ -197,7 +197,6 @@ HTMLWidgets.widget(
       }
 
       var x = scales[0], y = scales[1], z = scales[2];
-      var sphereRadius = 0.15;
 
       // Draw a sphere at each x,y,z coordinate.
       var datapoints = scene.selectAll(".datapoint").data( rows );
@@ -206,7 +205,7 @@ HTMLWidgets.widget(
       var newDatapoints = datapoints.enter()
            .append("transform")
            .attr("class", "datapoint")
-           .attr("scale", [sphereRadius, sphereRadius, sphereRadius])
+           .attr("scale", function(row) {return [row["opt__size"], row["opt__size"], row["opt__size"]];})
            .append("shape");
       newDatapoints
         .append("appearance")
@@ -219,7 +218,7 @@ HTMLWidgets.widget(
         .append("svg:title").text(function(d){ return "This doesn't work :<";})
 
       datapoints.selectAll("shape appearance material")
-        .attr("diffuseColor", function(row) {return row["color"];})
+        .attr("diffuseColor", function(row) {return row["opt__color"];})
 
       datapoints.transition().ease("linear").duration(1)
         .attr("translation", function(row) {

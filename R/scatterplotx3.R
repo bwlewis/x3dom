@@ -11,6 +11,8 @@
 #' ticks to display per axis.
 #' @param color Either a single valid RGB, hex or named color name, or
 #' a vector of valid color names of length \code{nrow(x)}.
+#' @param size The plot point radius, either as a single number or a
+#' vector of sizes of length \code{nrow(x)}.
 #' @param grid Set FALSE to disable display of a grid.
 #'
 #' @source
@@ -38,6 +40,7 @@ scatterplotx3 <- function(
   tick.marks = TRUE,
   num.ticks = c(6,6,6),
   color = "steelblue",
+  size = 0.15,
   grid = TRUE)
 {
   # validate input
@@ -53,7 +56,10 @@ scatterplotx3 <- function(
   # convert matrix to a JSON array required by scatterplot3x.js
   x = as.data.frame(x)
   options$key = names(x)
-  x$color = color
+  # this is stupid
+  if(any(c("opt__color","opt_size") %in% names(x))) stop("Sorry, the names 'opt__color' and 'opt__size' are reserved.")
+  x$opt__color = color
+  x$opt__size = size
   j = toJSON(Reduce(c,lapply(1:nrow(x),function(i)list(x[i,]))))
 
   # create widget

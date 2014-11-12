@@ -8,7 +8,7 @@ Harry Voorhees: \url{http://bl.ocks.org/hlvoorhees/5986172}.
 \usage{
 scatterplotx3(x, height = NULL, width = NULL, axis = TRUE,
   tick.marks = TRUE, num.ticks = c(6, 6, 6), color = "steelblue",
-  grid = TRUE)
+  size = 0.15, grid = TRUE)
 }
 \arguments{
 \item{x}{A data matrix with three columns corresponding to the x,y,z
@@ -25,6 +25,9 @@ ticks to display per axis.}
 
 \item{color}{Either a single valid RGB, hex or named color name, or
 a vector of valid color names of length \code{nrow(x)}.}
+
+\item{size}{The plot point radius, either as a single number or a
+vector of sizes of length \code{nrow(x)}.}
 
 \item{grid}{Set FALSE to disable display of a grid.}
 }
